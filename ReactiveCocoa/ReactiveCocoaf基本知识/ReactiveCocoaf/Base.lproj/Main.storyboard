@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-b9-eoz" customClass="BlueView">
+                                <rect key="frame" x="67" y="142" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V5-oG-YZ6">
+                                        <rect key="frame" x="114" y="44" width="67" height="39"/>
+                                        <color key="backgroundColor" red="1" green="0.2717692196" blue="0.90301276919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="btnClik:" destination="SNe-b9-eoz" eventType="touchUpInside" id="tIo-8S-0V9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7V5-oG-YZ6" secondAttribute="bottom" constant="45" id="4dN-bU-CAc"/>
+                                    <constraint firstItem="7V5-oG-YZ6" firstAttribute="top" secondItem="SNe-b9-eoz" secondAttribute="top" constant="44" id="Ckv-55-SIK"/>
+                                    <constraint firstAttribute="trailing" secondItem="7V5-oG-YZ6" secondAttribute="trailing" constant="86" id="Esk-KF-YnG"/>
+                                    <constraint firstItem="7V5-oG-YZ6" firstAttribute="leading" secondItem="SNe-b9-eoz" secondAttribute="leading" constant="87" id="W2W-cq-93m"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SNe-b9-eoz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="122" id="Gi2-Cb-NJ0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SNe-b9-eoz" secondAttribute="bottom" constant="397" id="JXn-Oe-dNX"/>
+                            <constraint firstItem="SNe-b9-eoz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="67" id="cmE-E5-ihO"/>
+                            <constraint firstAttribute="trailing" secondItem="SNe-b9-eoz" secondAttribute="trailing" constant="68" id="y6f-kM-2QV"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="blueView" destination="SNe-b9-eoz" id="Xda-3z-JAv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233.5" y="92.5"/>
+        </scene>
+    </scenes>
+</document>

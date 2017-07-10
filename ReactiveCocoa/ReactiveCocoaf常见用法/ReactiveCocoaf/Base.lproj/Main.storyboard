@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umJ-m9-6FF">
+                                <rect key="frame" x="127" y="28" width="122" height="30"/>
+                                <color key="backgroundColor" red="0.42110415750000002" green="1" blue="0.60189226090000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3eT-6F-Zuw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0U-k7-rRa">
+                                <rect key="frame" x="75" y="88" width="239" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.53736803060000005" blue="0.52164195619999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MBM-gH-mia"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pil-PV-Dy7">
+                                <rect key="frame" x="70" y="218" width="274" height="300"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="QiH-On-CiX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pil-PV-Dy7" firstAttribute="top" secondItem="H0U-k7-rRa" secondAttribute="bottom" constant="100" id="01O-OC-KIM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H0U-k7-rRa" secondAttribute="trailing" constant="80" id="0jB-39-o9U"/>
+                            <constraint firstItem="Pil-PV-Dy7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="2iF-3D-XVw"/>
+                            <constraint firstItem="umJ-m9-6FF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="107" id="Aap-Nf-Q6j"/>
+                            <constraint firstItem="umJ-m9-6FF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Mts-jw-H86"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="umJ-m9-6FF" secondAttribute="trailing" constant="145" id="SdP-0L-vcF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pil-PV-Dy7" secondAttribute="trailing" constant="50" id="eJ6-Jo-uym"/>
+                            <constraint firstItem="H0U-k7-rRa" firstAttribute="top" secondItem="umJ-m9-6FF" secondAttribute="bottom" constant="30" id="rsA-qq-qKG"/>
+                            <constraint firstItem="H0U-k7-rRa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="uP9-1a-wzv"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="button" destination="umJ-m9-6FF" id="1MW-W0-xQt"/>
+                        <outlet property="label" destination="Pil-PV-Dy7" id="sWO-Yf-nXg"/>
+                        <outlet property="textField" destination="H0U-k7-rRa" id="he4-Ux-gKf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="215"/>
+        </scene>
+    </scenes>
+</document>

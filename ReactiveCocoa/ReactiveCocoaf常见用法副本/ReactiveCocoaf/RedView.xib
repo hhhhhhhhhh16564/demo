@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Hc8-9I-1JD" customClass="RedView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-k8-gg7">
+                    <rect key="frame" x="277" y="279" width="46" height="30"/>
+                    <color key="backgroundColor" red="0.1531687618" green="1" blue="0.83428208049999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="btnClick:" destination="Hc8-9I-1JD" eventType="touchUpInside" id="3AA-pw-mcI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="PLB-k8-gg7" firstAttribute="centerY" secondItem="Hc8-9I-1JD" secondAttribute="centerY" id="JqW-RS-zVe"/>
+                <constraint firstItem="PLB-k8-gg7" firstAttribute="centerX" secondItem="Hc8-9I-1JD" secondAttribute="centerX" id="eHb-ey-ptJ"/>
+            </constraints>
+            <point key="canvasLocation" x="446" y="272"/>
+        </view>
+    </objects>
+</document>
