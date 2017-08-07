@@ -8,9 +8,11 @@
 
 #import "YBRemoteResourceLoaderDelegate.h"
 #import "YBRemoteAudioFile.h"
+#import "YBAudioDownLoader.h"
 #import "NSURL+SZ.h"
-@interface YBRemoteResourceLoaderDelegate ()
+@interface YBRemoteResourceLoaderDelegate ()<YBYBAudioDownLoaderDelegate>
 @property (nonatomic, strong) NSMutableArray *loadingRequests;
+@property(nonatomic, strong) YBAudioDownLoader *downLoader;
 @end
 
 
@@ -20,6 +22,13 @@
         _loadingRequests = [NSMutableArray array];
     }
     return _loadingRequests;
+}
+- (YBAudioDownLoader  *)downLoader {
+    if (!_downLoader) {
+        _downLoader = [[YBAudioDownLoader alloc] init];
+        _downLoader.delegate = self;
+    }
+    return _downLoader;
 }
 
 
@@ -47,13 +56,24 @@
     [self.loadingRequests addObject:loadingRequest];
     
     //2. 判断有没有正在下载
-    
+    if (self.downLoader.loadedSize == 0) {
+        
+        [self.downLoader downLoadWithURL:url offset:requestOffset];
+        // 开始下载数据（根据请求的信息， url, requestOffset, requestLeng
+        return YES;
+    }
     
     
     
     
     //3. 判断当前是否需要重新下载
-    
+    // 3.1 当前资源请求， 开始点 < 下载开始点
+    // 3.2 当资源的请求， 开始点 > 下载的开始点 + 下载的长度 + 666
+    if (requestOffset < self.downLoader.offset || requestOffset > (self.downLoader.offset + self.downLoader.loadedSize +666)) {
+        
+        [self.downLoader downLoadWithURL:url offset:requestOffset];
+        
+    }
     
     
     
@@ -61,30 +81,9 @@
     
     // 开始处理请求资源（在下载过程中，也要不听的判断）
     
+    [self handleAllLoadingRequest];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     return YES;
 }
 
@@ -128,7 +127,60 @@
 
 
 
+-(void)handleAllLoadingRequest{
+    
+    NSMutableArray *deleteRequests = [NSMutableArray array];
+    for (AVAssetResourceLoadingRequest * loadingRequest in self.loadingRequests) {
+        // 1. 填充内容信息头
+        NSURL *url = loadingRequest.request.URL;
+        long long totalSize = self.downLoader.totalSize;
+        
+        loadingRequest.contentInformationRequest.contentLength = totalSize;
+        
+        NSString *contentType = self.downLoader.mimeType;
+        loadingRequest.contentInformationRequest.contentType = contentType;
+        loadingRequest.contentInformationRequest.byteRangeAccessSupported = YES;
+        
+        //2. 填充数据
+        NSData *data = [NSData dataWithContentsOfFile:[YBRemoteAudioFile tmpFilePath:url] options:NSDataReadingMappedIfSafe error:nil];
+        
+        if (data == nil) {
+            data = [NSData dataWithContentsOfFile:[YBRemoteAudioFile cacheFilePath:url] options:NSDataReadingMappedIfSafe error:nil];
+        }
+        long long requestOffset = loadingRequest.dataRequest.requestedOffset;
+        long long currentOffset = loadingRequest.dataRequest.currentOffset;
+        
+        if (requestOffset != currentOffset) {
+            requestOffset = currentOffset;
+        }
+        
+        NSInteger requestLength = loadingRequest.dataRequest.requestedLength;
+        
+        long long responseOffset = requestOffset - self.downLoader.offset;
+        
+        long long responseLenght = MIN(self.downLoader.offset+self.downLoader.loadedSize-requestOffset, requestLength);
+        
+        
+        NSData *subData = [data subdataWithRange:NSMakeRange(responseOffset, responseLenght)];
+        
+        [loadingRequest.dataRequest respondWithData:subData];
+        
+        // 完成请求后，求(必须把所有的关于这个请求的区间数据, 都返回完之后, 才能完成这个请求)
+        
+        if (responseLenght == responseLenght) {
+            [loadingRequest finishLoading];
+            [deleteRequests addObject:loadingRequest];
+        }
+        
+        
+    }
+    
+    
+    
+    [self.loadingRequests removeObjectsInArray:deleteRequests];
 
+    
+}
 
 
 
