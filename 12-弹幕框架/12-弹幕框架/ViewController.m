@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  gif动画
+//   12-弹幕框架
 //
-//  Created by 周磊 on 17/7/10.
+//  Created by yanbo on 17/8/8.
 //  Copyright © 2017年 zhl. All rights reserved.
 //
 
@@ -24,13 +24,36 @@
 }
 
 - (IBAction)first:(UIButton *)sender {
+//    NSLog(@"%zd  %zd  %zd", NSOrderedDescending, NSOrderedSame, NSOrderedAscending);
+//
+//    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"1",@"84", @"94", @"8", @"32", @"99", @"13", @"9", @"11", @"2", nil];
+//    
+//    NSLog(@"%@", array);
+//    
+//    [array sortUsingComparator:^NSComparisonResult(  NSString *  _Nonnull obj1, NSString *  _Nonnull obj2) {
+//        
+//        return [obj1 intValue] < [obj2 intValue];
+//        
+//        
+//  
+//    }];
+//    
+//
+//    NSLog(@"-----%@", array);
+
+
 }
 - (IBAction)second:(id)sender {
+
+    
 }
+
+
 - (IBAction)third:(id)sender {
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
     
     
     

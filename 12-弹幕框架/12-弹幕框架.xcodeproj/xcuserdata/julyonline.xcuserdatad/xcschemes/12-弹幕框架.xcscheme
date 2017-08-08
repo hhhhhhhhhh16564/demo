@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5E82BE211F1463240087BE28"
-               BuildableName = "GPUImage&#x4f7f;&#x7528;.app"
-               BlueprintName = "GPUImage&#x4f7f;&#x7528;"
-               ReferencedContainer = "container:GPUImage&#x4f7f;&#x7528;.xcodeproj">
+               BlueprintIdentifier = "5ECC89E11F396DC600EA0831"
+               BuildableName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.app"
+               BlueprintName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;"
+               ReferencedContainer = "container:12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5E82BE3A1F1463250087BE28"
-               BuildableName = "GPUImage&#x4f7f;&#x7528;Tests.xctest"
-               BlueprintName = "GPUImage&#x4f7f;&#x7528;Tests"
-               ReferencedContainer = "container:GPUImage&#x4f7f;&#x7528;.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5E82BE451F1463250087BE28"
-               BuildableName = "GPUImage&#x4f7f;&#x7528;UITests.xctest"
-               BlueprintName = "GPUImage&#x4f7f;&#x7528;UITests"
-               ReferencedContainer = "container:GPUImage&#x4f7f;&#x7528;.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5E82BE211F1463240087BE28"
-            BuildableName = "GPUImage&#x4f7f;&#x7528;.app"
-            BlueprintName = "GPUImage&#x4f7f;&#x7528;"
-            ReferencedContainer = "container:GPUImage&#x4f7f;&#x7528;.xcodeproj">
+            BlueprintIdentifier = "5ECC89E11F396DC600EA0831"
+            BuildableName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.app"
+            BlueprintName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;"
+            ReferencedContainer = "container:12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5E82BE211F1463240087BE28"
-            BuildableName = "GPUImage&#x4f7f;&#x7528;.app"
-            BlueprintName = "GPUImage&#x4f7f;&#x7528;"
-            ReferencedContainer = "container:GPUImage&#x4f7f;&#x7528;.xcodeproj">
+            BlueprintIdentifier = "5ECC89E11F396DC600EA0831"
+            BuildableName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.app"
+            BlueprintName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;"
+            ReferencedContainer = "container:12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5E82BE211F1463240087BE28"
-            BuildableName = "GPUImage&#x4f7f;&#x7528;.app"
-            BlueprintName = "GPUImage&#x4f7f;&#x7528;"
-            ReferencedContainer = "container:GPUImage&#x4f7f;&#x7528;.xcodeproj">
+            BlueprintIdentifier = "5ECC89E11F396DC600EA0831"
+            BuildableName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.app"
+            BlueprintName = "12-&#x5f39;&#x5e55;&#x6846;&#x67b6;"
+            ReferencedContainer = "container:12-&#x5f39;&#x5e55;&#x6846;&#x67b6;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

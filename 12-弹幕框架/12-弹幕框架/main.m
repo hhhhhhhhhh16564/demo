@@ -1,8 +1,8 @@
 //
 //  main.m
-//  GPUImage使用
+//  12-弹幕框架
 //
-//  Created by 周磊 on 17/7/11.
+//  Created by yanbo on 17/8/8.
 //  Copyright © 2017年 zhl. All rights reserved.
 //
 

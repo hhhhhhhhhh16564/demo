@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>GPUImage使用.xcscheme</key>
+		<key>12-弹幕框架.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5E82BE211F1463240087BE28</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E82BE3A1F1463250087BE28</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E82BE451F1463250087BE28</key>
+		<key>5ECC89E11F396DC600EA0831</key>
 		<dict>
 			<key>primary</key>
 			<true/>

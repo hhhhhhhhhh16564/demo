@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  gif动画
+//   12-弹幕框架
 //
-//  Created by 周磊 on 17/7/10.
+//  Created by yanbo on 17/8/8.
 //  Copyright © 2017年 zhl. All rights reserved.
 //
 
