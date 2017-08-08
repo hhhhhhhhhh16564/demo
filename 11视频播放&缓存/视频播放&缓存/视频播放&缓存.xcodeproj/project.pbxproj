@@ -18,6 +18,7 @@
 		5E07EDE31F31E12B00FB21E1 /* YBRemoteResourceLoaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07EDE21F31E12B00FB21E1 /* YBRemoteResourceLoaderDelegate.m */; };
 		5E07EDE61F31E2D200FB21E1 /* YBRemoteAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07EDE51F31E2D200FB21E1 /* YBRemoteAudioFile.m */; };
 		5E07EDEF1F31EF3E00FB21E1 /* YBAudioDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07EDEE1F31EF3E00FB21E1 /* YBAudioDownLoader.m */; };
+		5E1E85C11F385C5700CD4662 /* JUView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E85C01F385C5700CD4662 /* JUView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		5E07EDE51F31E2D200FB21E1 /* YBRemoteAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRemoteAudioFile.m; sourceTree = "<group>"; };
 		5E07EDED1F31EF3E00FB21E1 /* YBAudioDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAudioDownLoader.h; sourceTree = "<group>"; };
 		5E07EDEE1F31EF3E00FB21E1 /* YBAudioDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAudioDownLoader.m; sourceTree = "<group>"; };
+		5E1E85BF1F385C5700CD4662 /* JUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUView.h; sourceTree = "<group>"; };
+		5E1E85C01F385C5700CD4662 /* JUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				5E07EDC01F31CA1A00FB21E1 /* AppDelegate.m */,
 				5E07EDD61F31E08F00FB21E1 /* ViewController.h */,
 				5E07EDD71F31E08F00FB21E1 /* ViewController.m */,
+				5E1E85BF1F385C5700CD4662 /* JUView.h */,
+				5E1E85C01F385C5700CD4662 /* JUView.m */,
 				5E07EDD81F31E08F00FB21E1 /* Main.storyboard */,
 				5E07EDC81F31CA1A00FB21E1 /* Assets.xcassets */,
 				5E07EDCA1F31CA1A00FB21E1 /* LaunchScreen.storyboard */,
@@ -186,6 +191,7 @@
 			files = (
 				5E07EDE61F31E2D200FB21E1 /* YBRemoteAudioFile.m in Sources */,
 				5E07EDE01F31E0D400FB21E1 /* NSURL+SZ.m in Sources */,
+				5E1E85C11F385C5700CD4662 /* JUView.m in Sources */,
 				5E07EDEF1F31EF3E00FB21E1 /* YBAudioDownLoader.m in Sources */,
 				5E07EDD91F31E08F00FB21E1 /* ViewController.m in Sources */,
 				5E07EDDD1F31E0AD00FB21E1 /* XMGRemotePlayer.m in Sources */,
@@ -340,6 +346,7 @@
 				5E07EDD21F31CA1A00FB21E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
