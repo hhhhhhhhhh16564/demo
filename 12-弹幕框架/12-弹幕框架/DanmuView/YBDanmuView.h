@@ -10,12 +10,11 @@
 #import "YBDanmuModelProtocol.h"
 @protocol YBDanmuViewProtocol <NSObject>
 
+
 //外界的时间，也就是视频播放到的时间
 @property (nonatomic, readonly) NSTimeInterval currentTime;
 
 -(UIView *)danmuViewModle:(id<YBDanmuModelProtocol>)model;
-
-
 
 
 

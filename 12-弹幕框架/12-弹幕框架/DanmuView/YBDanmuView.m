@@ -44,9 +44,11 @@
 
 
 -(NSTimer *)timer{
-    if (_timer) {
+    if (!_timer) {
         NSTimer *timer = [NSTimer timerWithTimeInterval:self.timerSes target:self selector:@selector(checkAndBiu) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        
+        _timer = timer;
     }
     return _timer;
 }
@@ -90,6 +92,9 @@
 
 -(void)checkAndBiu{
     
+//    NSLog(@"%zd", self.models.count);
+
+    
     // 每次检查前，需要修改 弹道的剩余时间和 等待时间
     
     for (int i = 0; i < self.danDaoCount; i++) {
@@ -118,6 +123,7 @@
     }];
     
     
+ 
 // 检测数组里的所有模型，是否可以发射，如果可以，直接发射
     
     NSMutableArray *deleteModels = [NSMutableArray array];
@@ -126,9 +132,11 @@
         
         //1、检测是否已经到了发送时间
 
-        // 如播放器的当前时间为5秒 ， 则开始时间是3秒的不能发射，开始时间是6秒的可以发射
-        if ([model beginTime] < [self.delegate currentTime] ) {
+        // 如播放器的当前时间为5秒 ， 则开始时间是3秒的可以发射，开始时间是6秒的不能发射
+        if ([model beginTime] > [self.delegate currentTime] ) {
             //如果前边的不满足条件，则后边也不满足
+            
+//            NSLog(@"%f", [self.delegate currentTime]);
             break;
         }
         
@@ -146,14 +154,8 @@
         
     }
     
-    
-    
-    
     [self.models removeObjectsInArray:deleteModels];
-    
-    
-    
-    
+
 }
 
 
@@ -193,7 +195,7 @@
         
         // 重置数据：修改该弹道的剩余时间 和 等待时间
         self.laneLeftTimes[i] = @([model liveTime]);
-        self.laneWaitTimes[i] = @(self.frame.size.width/speed);
+        self.laneWaitTimes[i] = @(modelView.frame.size.width/speed);
         
         
         CGRect frame = modelView.frame;
@@ -201,9 +203,14 @@
         CGPoint point = CGPointMake(self.frame.size.width, danDaoHeight * i+(danDaoHeight-modelView.frame.size.height)*0.5);
         frame.origin = point;
         modelView.frame = frame;
+        
+        [self addSubview:modelView];
+        
+        
 
         //动画
-   
+        NSLog(@"%f", [model liveTime]);
+        
         [UIView animateWithDuration:[model liveTime]  delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             
             CGRect frame = modelView.frame;
