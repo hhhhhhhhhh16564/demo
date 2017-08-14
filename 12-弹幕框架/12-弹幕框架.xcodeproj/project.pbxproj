@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E4733EF1F3AC6B300E7F7F2 /* YBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4733EE1F3AC6B300E7F7F2 /* YBModel.m */; };
+		5E69B5B41F414D89005356CB /* CALayer+Animate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E69B5B31F414D89005356CB /* CALayer+Animate.m */; };
 		5ECC89E71F396DC600EA0831 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECC89E61F396DC600EA0831 /* main.m */; };
 		5ECC89EA1F396DC600EA0831 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECC89E91F396DC600EA0831 /* AppDelegate.m */; };
 		5ECC89F21F396DC600EA0831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECC89F11F396DC600EA0831 /* Assets.xcassets */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		5E4733ED1F3AC6B300E7F7F2 /* YBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBModel.h; sourceTree = "<group>"; };
 		5E4733EE1F3AC6B300E7F7F2 /* YBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBModel.m; sourceTree = "<group>"; };
+		5E69B5B21F414D89005356CB /* CALayer+Animate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Animate.h"; sourceTree = "<group>"; };
+		5E69B5B31F414D89005356CB /* CALayer+Animate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Animate.m"; sourceTree = "<group>"; };
 		5ECC89E21F396DC600EA0831 /* 12-弹幕框架.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "12-弹幕框架.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECC89E61F396DC600EA0831 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5ECC89E81F396DC600EA0831 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				5ECC8A021F396EA600EA0831 /* YBDanmuView.h */,
 				5ECC8A031F396EA600EA0831 /* YBDanmuView.m */,
 				5ECC8A051F396FE200EA0831 /* YBDanmuModelProtocol.h */,
+				5E69B5B21F414D89005356CB /* CALayer+Animate.h */,
+				5E69B5B31F414D89005356CB /* CALayer+Animate.m */,
 			);
 			path = DanmuView;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ECC8A001F396DED00EA0831 /* ViewController.m in Sources */,
+				5E69B5B41F414D89005356CB /* CALayer+Animate.m in Sources */,
 				5ECC89EA1F396DC600EA0831 /* AppDelegate.m in Sources */,
 				5ECC89E71F396DC600EA0831 /* main.m in Sources */,
 				5ECC8A041F396EA600EA0831 /* YBDanmuView.m in Sources */,

@@ -16,7 +16,8 @@
 
 -(UIView *)danmuViewModle:(id<YBDanmuModelProtocol>)model;
 
-
+ 
+-(void)danmuViewDidClick:(UIView *)danmuView at:(CGPoint)point;
 
 @end
 
@@ -32,6 +33,11 @@
 
 // 检测Modle的时间  默认为0.1
 @property (nonatomic,assign) CGFloat timerSes;
+
+
+
+-(void)pauseDanmuAnimate;
+-(void)resumeDanmuAnimate;
 
 
 

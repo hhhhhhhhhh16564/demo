@@ -43,7 +43,7 @@ int a = 0;
     
     self.timer = timer;
     
-    [self second:nil];
+ 
 
 }
 
@@ -80,7 +80,6 @@ int a = 0;
 //开启
 - (IBAction)first:(UIButton *)sender {
  
-    self.timer.fireDate = [NSDate distantPast];
     
     YBModel *model = [[YBModel alloc]init];
     model.beginTime = self.currentPlayTime;
@@ -103,21 +102,23 @@ int a = 0;
 
 }
 - (IBAction)second:(id)sender {
+    
+    [self.danmuView pauseDanmuAnimate];
 
-    self.timer.fireDate = [NSDate distantFuture];
+}
+
+
+
+- (IBAction)third:(id)sender {
+
+    [self.danmuView resumeDanmuAnimate];
     
     
 }
 
-
-//暂停
-- (IBAction)third:(id)sender {
+-(void)danmuViewDidClick:(UIView *)danmuView at:(CGPoint)point{
     
-    [self.danmuView.models enumerateObjectsUsingBlock:^(id<YBDanmuModelProtocol>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       
-        NSLog(@"%.0f", [obj beginTime]);
-        
-    }];
+    NSLog(@"%@", NSStringFromCGPoint(point));
     
     
 }

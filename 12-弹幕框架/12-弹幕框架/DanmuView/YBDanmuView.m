@@ -7,12 +7,21 @@
 //
 
 #import "YBDanmuView.h"
+#import "CALayer+Animate.h"
 
 @interface YBDanmuView()
+
 
 @property(nonatomic, weak) NSTimer *timer;
 @property(nonatomic, strong) NSMutableArray *laneWaitTimes;
 @property(nonatomic, strong) NSMutableArray *laneLeftTimes;
+
+//正在动画的 数组
+
+@property (nonatomic, strong) NSMutableArray *danmuViews;
+
+@property (nonatomic,assign) BOOL isAnimate;
+
 
 @end
 
@@ -24,8 +33,13 @@
     
     self = [super initWithFrame:frame];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(click:)];
+    [self addGestureRecognizer:tap];
+    
+    self.layer.masksToBounds = YES;
     self.danDaoCount = 5;
     self.timerSes = 0.1;
+    self.isAnimate = YES;
     
     return self;
 }
@@ -68,6 +82,8 @@
 }
 
 
+
+
 -(NSMutableArray *)laneLeftTimes{
     
     if (!_laneLeftTimes) {
@@ -80,6 +96,12 @@
     return _laneLeftTimes;
 }
 
+- (NSMutableArray *)danmuViews {
+    if (!_danmuViews) {
+        _danmuViews = [NSMutableArray array];
+    }
+    return _danmuViews;
+}
 
 
 #pragma makr -声明周期方法
@@ -87,7 +109,34 @@
 -(void)didMoveToSuperview{
     [super didMoveToSuperview];
     [self timer];
+    
+    
 }
+
+-(void)click:(UITapGestureRecognizer *)tap{
+    
+    CGPoint point = [tap locationInView:self];
+    
+    for (UIView *danmuView in self.danmuViews) {
+        
+        CGRect frame = danmuView.layer.presentationLayer.frame;
+        BOOL isContain = CGRectContainsPoint(frame, point);
+        
+        if (isContain) {
+            if ([self.delegate respondsToSelector:@selector(danmuViewDidClick:at:)]) {
+                [self.delegate danmuViewDidClick:danmuView at:point];
+                break;
+            }
+            
+            
+        }
+        
+    }
+    
+    
+    
+}
+
 
 
 -(void)checkAndBiu{
@@ -147,7 +196,6 @@
         
         if (result) {
             [deleteModels addObject:model];
-            
         }
         
 
@@ -191,7 +239,10 @@
             continue;
         }
 
+        
+        [self.danmuViews addObject:modelView];
         //3 到了这一步弹幕就可以发射了
+   
         
         // 重置数据：修改该弹道的剩余时间 和 等待时间
         self.laneLeftTimes[i] = @([model liveTime]);
@@ -209,7 +260,7 @@
         
 
         //动画
-        NSLog(@"%f", [model liveTime]);
+//        NSLog(@"%f", [model liveTime]);
         
         [UIView animateWithDuration:[model liveTime]  delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             
@@ -221,6 +272,7 @@
         } completion:^(BOOL finished) {
             
             [modelView removeFromSuperview];
+            [self.danmuViews removeObject:modelView];
             
         }];
         
@@ -234,15 +286,30 @@
 
 
 
+-(void)pauseDanmuAnimate{
+   
+    if (self.isAnimate) {
+        [self.timer setFireDate:[NSDate distantFuture]];
+        [[self.danmuViews valueForKeyPath:@"layer"] makeObjectsPerformSelector:@selector(pauseAnimate)];
+        self.isAnimate = !self.isAnimate;
+        
+    }
+    
 
+    
+    
+}
 
+-(void)resumeDanmuAnimate{
 
+    if (!self.isAnimate) {
+        [self.timer setFireDate:[NSDate distantPast]];
+        [[self.danmuViews valueForKeyPath:@"layer"] makeObjectsPerformSelector:@selector(resumeAnimate)];
+        self.isAnimate = !self.isAnimate;
 
-
-
-
-
-
+    }
+  
+}
 
 
 
