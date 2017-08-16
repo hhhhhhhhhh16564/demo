@@ -146,9 +146,9 @@
     
     [self.player seekToTime:currentTime completionHandler:^(BOOL finished) {
         if (finished) {
-            NSLog(@"确定加载这个时间点的音频资源");
+//            NSLog(@"确定加载这个时间点的音频资源");
         }else {
-            NSLog(@"取消加载这个时间点的音频资源");
+//            NSLog(@"取消加载这个时间点的音频资源");
         }
     }];
     
@@ -365,7 +365,7 @@
     if ([keyPath isEqualToString:@"status"]) {
         AVPlayerItemStatus status = [change[NSKeyValueChangeNewKey] integerValue];
         if (status == AVPlayerItemStatusReadyToPlay) {
-            NSLog(@"资源准备好了, 这时候播放就没有问题");
+//            NSLog(@"资源准备好了, 这时候播放就没有问题");
             [self resume];
         }else {
             NSLog(@"状态未知");
@@ -374,7 +374,7 @@
     }else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
         BOOL ptk = [change[NSKeyValueChangeNewKey] boolValue];
         if (ptk) {
-            NSLog(@"当前的资源, 准备的已经足够播放了");
+//            NSLog(@"当前的资源, 准备的已经足够播放了");
             //
             // 用户的手动暂停的优先级最高
             if (!_isUserPause) {
@@ -384,7 +384,7 @@
             }
 
         }else {
-            NSLog(@"资源还不够, 正在加载过程当中");
+//            NSLog(@"资源还不够, 正在加载过程当中");
             self.state = XMGRemotePlayerStateLoading;
         }
 

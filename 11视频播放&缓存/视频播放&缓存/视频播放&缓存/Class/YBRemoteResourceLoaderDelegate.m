@@ -125,7 +125,11 @@
 
 }
 
-
+-(void)downloading{
+    
+    [self handleAllLoadingRequest];
+    
+}
 
 -(void)handleAllLoadingRequest{
     
@@ -167,16 +171,14 @@
         
         // 完成请求后，求(必须把所有的关于这个请求的区间数据, 都返回完之后, 才能完成这个请求)
         
-        if (responseLenght == responseLenght) {
+        if (requestLength == responseLenght) {
             [loadingRequest finishLoading];
             [deleteRequests addObject:loadingRequest];
         }
         
         
     }
-    
-    
-    
+ 
     [self.loadingRequests removeObjectsInArray:deleteRequests];
 
     
@@ -186,47 +188,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest{
+    
+    
+    NSLog(@"取消某个请求");
+    [self.loadingRequests removeObject:loadingRequest];
     
 }
 @end

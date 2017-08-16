@@ -146,9 +146,6 @@
     
     [path stroke];
     
-    
-    
-    
 }
 
 -(void)stytleText2{
