@@ -21,9 +21,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     YBTitleStytle  *style = [[YBTitleStytle alloc]init];
-    style.isScrollEndble = NO;
+    style.isScrollEndble = YES;
     NSArray *titleArray = @[@"语文", @"数学个地方官的双方各", @"化学生物", @"鹦鹉十多个电饭锅电饭锅", @"孙悟空发送分散", @"语文", @"数学", @"化学生物", @"鹦鹉", @"孙悟发顺丰萨达是否空"];
-    titleArray = @[@"语文", @"数学", @"英语"];
+//    titleArray = @[@"语文", @"数学", @"英语"];
     NSMutableArray *childVcArray = [NSMutableArray array];
 
     for (int i = 0; i < titleArray.count; i++) {

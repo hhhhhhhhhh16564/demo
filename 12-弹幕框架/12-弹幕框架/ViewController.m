@@ -118,6 +118,8 @@ int a = 0;
 
 -(void)danmuViewDidClick:(UIView *)danmuView at:(CGPoint)point{
     
+    danmuView.backgroundColor = [UIColor yellowColor];
+    
     NSLog(@"%@", NSStringFromCGPoint(point));
     
     
