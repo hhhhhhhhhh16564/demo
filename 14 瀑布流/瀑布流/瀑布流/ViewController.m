@@ -79,7 +79,6 @@ static NSString * const XMGShopId = @"shop";
     YBCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:XMGShopId forIndexPath:indexPath];
     
     cell.shop = self.dataArray[indexPath.row];
-    
     return cell;
     
 }
@@ -102,12 +101,12 @@ static NSString * const XMGShopId = @"shop";
 // 共有多少列
 -(NSInteger)columnCountInWaterFlowLayout:(YBCollectionViewFlowLayout *)flowLayout{
     
-    return 2;
+    return 3;
 }
 
 //行间距
 -(CGFloat)rowMarginInWaterFlowLayout:(YBCollectionViewFlowLayout *)flowLayout{
-    return 130;
+    return 20;
 }
 
 //列间距
@@ -119,7 +118,7 @@ static NSString * const XMGShopId = @"shop";
 // 上下左右距离
 -(UIEdgeInsets)edgeInWaterFlowLayout:(YBCollectionViewFlowLayout *)flowLayout{
     
-    return UIEdgeInsetsMake(10, 20, 30, 40);
+    return UIEdgeInsetsMake(10, 50, 30, 40);
 }
 
 

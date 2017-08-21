@@ -77,7 +77,7 @@
 
     [super prepareLayout];
     
-    NSLog(@"初始化\n\n\n");
+    NSLog(@"初始化\n\n\n\n\n\n\n");
  
     [self setConfigDefaultValue];
 
@@ -86,7 +86,8 @@
 
     NSInteger itemCount = [self.collectionView numberOfItemsInSection:0];
     
-    for (int i = 0; i < itemCount; i++) {
+    //i 从self.layoutAttributesArray.count的个数开始算起, 可以避免当下拉刷新时重头开始计算
+    for (NSInteger i = self.layoutAttributesArray.count; i < itemCount; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForItemAtIndexPath:indexPath];
         [self.layoutAttributesArray addObject:layoutAttributes];
@@ -111,13 +112,8 @@
     //边距
     _inset = UIEdgeInsetsMake(10, 10, 10, 10);
 
-    
-    
-    
     // 通过参数修改值
-    
- 
-    
+
     if ([self.flowoutDelegate respondsToSelector:@selector(columnCountInWaterFlowLayout:)]) {
         
         _columnCount = [self.flowoutDelegate columnCountInWaterFlowLayout:self];

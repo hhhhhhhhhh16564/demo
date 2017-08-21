@@ -33,11 +33,6 @@
 // 字体大小
 @property(nonatomic, strong) UIFont *font;
 
-
-
-
-
-
 // 是否显示底部的条
 @property (nonatomic,assign) BOOL showBottonLine;
 

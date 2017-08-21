@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "YBTitleStytle.h"
 #import "YBPageView.h"
-
+#import "YBPageCollectionView.h"
 @interface ViewController ()
 
 @end
@@ -19,13 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self text2];
+
+}
+
+
+-(void)text1{
     
     YBTitleStytle  *style = [[YBTitleStytle alloc]init];
     style.isScrollEndble = YES;
     NSArray *titleArray = @[@"语文", @"数学个地方官的双方各", @"化学生物", @"鹦鹉十多个电饭锅电饭锅", @"孙悟空发送分散", @"语文", @"数学", @"化学生物", @"鹦鹉", @"孙悟发顺丰萨达是否空"];
-//    titleArray = @[@"语文", @"数学", @"英语"];
+    //    titleArray = @[@"语文", @"数学", @"英语"];
     NSMutableArray *childVcArray = [NSMutableArray array];
-
+    
     for (int i = 0; i < titleArray.count; i++) {
         UIViewController *Vc = [[UIViewController alloc]init];
         
@@ -37,11 +43,30 @@
     YBPageView *pageView = [[YBPageView alloc]initWithFrame:rect stytle:style titles:titleArray childVcs:childVcArray parentVc:self];
     
     [self.view addSubview:pageView];
-    
-    
-    
+  
 
 }
+-(void)text2{
+    
+    YBTitleStytle *style = [[YBTitleStytle alloc]init];
+    style.isScrollEndble = NO;
+    NSArray *titleArray = @[@"腾通", @"新浪", @"阿里巴巴", @"京东"];
+    
+    UICollectionViewLayout *layout = [[UICollectionViewLayout alloc]init];
+    
+    YBPageCollectionView *collectionView = [[YBPageCollectionView alloc]initWithFrame:CGRectMake(30, 100, 300, 250) titleStyle:style titles:titleArray isTitleTop:YES layout:layout];
+    
+    [self.view addSubview:collectionView];
+    
+
+    
+
+    
+    
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

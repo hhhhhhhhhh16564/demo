@@ -7,9 +7,8 @@
 //
 
 #import "YBContentView.h"
-#import "YBTitleView.h"
 
-@interface YBContentView ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, YBTitleViewDelegate>
+@interface YBContentView ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @property(nonatomic, strong)NSArray<UIViewController *> *childVcArray;
 
@@ -118,9 +117,6 @@
     
     self.isForbiddenScroll = NO;
     self.contentOffsetX = scrollView.contentOffset.x;
-    
-    NSLog(@"开始拖拽");
-    
 }
 
 

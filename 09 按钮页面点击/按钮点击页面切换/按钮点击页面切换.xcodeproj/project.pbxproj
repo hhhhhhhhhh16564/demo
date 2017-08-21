@@ -19,6 +19,7 @@
 		5E2340221F175314007831E9 /* YBContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2340211F175314007831E9 /* YBContentView.m */; };
 		5E2340251F175327007831E9 /* YBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2340241F175327007831E9 /* YBTitleView.m */; };
 		5E2340281F175581007831E9 /* YBTitleStytle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2340271F175581007831E9 /* YBTitleStytle.m */; };
+		5E7D0F4D1F4AE232000C34B9 /* YBPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D0F4C1F4AE232000C34B9 /* YBPageCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		5E2340241F175327007831E9 /* YBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBTitleView.m; sourceTree = "<group>"; };
 		5E2340261F175581007831E9 /* YBTitleStytle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTitleStytle.h; sourceTree = "<group>"; };
 		5E2340271F175581007831E9 /* YBTitleStytle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBTitleStytle.m; sourceTree = "<group>"; };
+		5E7D0F4B1F4AE232000C34B9 /* YBPageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPageCollectionView.h; sourceTree = "<group>"; };
+		5E7D0F4C1F4AE232000C34B9 /* YBPageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPageCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				5E2340241F175327007831E9 /* YBTitleView.m */,
 				5E2340261F175581007831E9 /* YBTitleStytle.h */,
 				5E2340271F175581007831E9 /* YBTitleStytle.m */,
+				5E7D0F4B1F4AE232000C34B9 /* YBPageCollectionView.h */,
+				5E7D0F4C1F4AE232000C34B9 /* YBPageCollectionView.m */,
 			);
 			path = YBPageView;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7D0F4D1F4AE232000C34B9 /* YBPageCollectionView.m in Sources */,
 				5E2340221F175314007831E9 /* YBContentView.m in Sources */,
 				5E2340281F175581007831E9 /* YBTitleStytle.m in Sources */,
 				5E0C8F381F1751D2006E2D38 /* ViewController.m in Sources */,
