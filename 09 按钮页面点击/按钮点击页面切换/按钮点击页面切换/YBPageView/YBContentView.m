@@ -56,7 +56,6 @@
 }
 
 -(void)setupCollectionView{
-    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumLineSpacing = 0;
     flowLayout.minimumInteritemSpacing = 0;
@@ -71,8 +70,6 @@
     [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"jjj"];
     [self addSubview:collectionView];
     self.collectionView = collectionView;
-    
-
 }
 
 
@@ -80,21 +77,17 @@
 
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"jjj" forIndexPath:indexPath];
     [[cell.contentView.subviews firstObject] removeFromSuperview];
     UIView *subView = self.childVcArray[indexPath.row].view;
     subView.backgroundColor = RandomColor;
-    
     [cell addSubview:subView];
     return cell;
-    
 }
 
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
     return self.childVcArray.count;
 }
 

@@ -8,8 +8,32 @@
 
 #import <UIKit/UIKit.h>
 #import "YBTitleStytle.h"
+
+#import "YBCollectionViewFlowLayout.h"
+
+@class YBContentView;
+@class YBPageCollectionView;
+@protocol YBPageCollectionViewDataSoruce <NSObject>
+
+- (__kindof UICollectionViewCell *)pageCollectionView:(YBPageCollectionView *)pagecollectionView  collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+
+- (NSInteger)numberOfSectionsInPageCollectionView:(YBPageCollectionView *)pageCollectionView;
+
+-(NSInteger)pageCollectionView:(YBPageCollectionView *)pagecollectionView numberOfItemsInSection:(NSInteger)section;
+
+@end
+
+
 @interface YBPageCollectionView : UIView
 
--(instancetype)initWithFrame:(CGRect)frame titleStyle:(YBTitleStytle *)style titles:(NSArray *)titles isTitleTop:(BOOL)isTop layout:(UICollectionViewLayout *)layout;
+-(instancetype)initWithFrame:(CGRect)frame titleStyle:(YBTitleStytle *)style titles:(NSArray *)titles isTitleTop:(BOOL)isTop layout:(YBCollectionViewFlowLayout *)layout;
+
+@property (nonatomic,copy) id<YBPageCollectionViewDataSoruce> dataSource;
+
+
+
+- (void)registerClass:(nullable Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
+- (void)registerNib:(nullable UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier;
+
 
 @end

@@ -144,13 +144,15 @@
 }
 
 -(void)setupBottomLineView{
+    if (self.titleStyle.showBottonLine) {
+        UIView *bottomLineView = [[UIView alloc]init];
+        bottomLineView.backgroundColor = self.titleStyle.bottomLineColor;
+        [self.scrollView addSubview:bottomLineView];
+        self.bottomLineView = bottomLineView;
 
-    
-    UIView *bottomLineView = [[UIView alloc]init];
-    bottomLineView.backgroundColor = self.titleStyle.bottomLineColor;
-    [self.scrollView addSubview:bottomLineView];
-    self.bottomLineView = bottomLineView;
-}
+    }
+
+  }
     
     
 
@@ -172,8 +174,13 @@
     
     // 2. 调整位置
     
+    NSTimeInterval duration = 0;
+    if (tap) {
+        duration = 0.3;
+    }
+    
 
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:duration animations:^{
         if (self.titleStyle.isScrollEndble) {
             //设置自动滚动
             CGFloat offsetX = newLabel.center.x - self.bounds.size.width*0.5;
@@ -201,6 +208,11 @@
 #pragma mark代理方法
 
 -(void)contetnView:(YBContentView *)contentView scrollProgress:(CGFloat)progress sourceIndex:(NSInteger)sourceIndex targetIndex:(NSInteger)targetIndex{
+    
+    if (sourceIndex == targetIndex) {
+        return;
+    }
+    
     // 1.点击时颜色改变
     UILabel *oldLabel = self.lableArray[sourceIndex];
     UILabel *newLabel = self.lableArray[targetIndex];
