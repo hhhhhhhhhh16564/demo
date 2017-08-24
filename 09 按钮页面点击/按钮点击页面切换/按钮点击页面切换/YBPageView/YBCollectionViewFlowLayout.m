@@ -155,7 +155,9 @@
 
 -(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"布局");
+//    NSLog(@"布局");
+    
+    
     
     CGFloat collectionWidth = self.collectionView.bounds.size.width;
 //    CGFloat collectionHeight = self.collectionView.bounds.size.height;

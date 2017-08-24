@@ -138,33 +138,13 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     return [self.dataSource pageCollectionView:self collectionView:collectionView cellForItemAtIndexPath:indexPath];
-    
-//    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"11111" forIndexPath:indexPath];
-//    UILabel *label = nil;
-//    for (UIView *vvv in cell.subviews) {
-//        
-//        if ([vvv isKindOfClass:[UILabel class]]) {
-//            label = (UILabel *)vvv;
-//        }
-//        
-//    }
-//    
-//    
-//    
-//    if (label == nil) {
-//        label = [[UILabel alloc]init];
-//        label.frame = cell.bounds;
-//        label.numberOfLines = 2;
-//        [cell addSubview:label];
-//        
-//
-//    }
-////    label = [[UILabel alloc]init];
-//
-//    label.text = [NSString stringWithFormat:@"section %zd   row: %zd ", indexPath.section, indexPath.row];
+
 }
 
-
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+ 
+    [self.dataSource pageCollectionView:self didSelectItemAtIndexPath:indexPath];
+}
 
 #pragma mark 代理方法
 
@@ -186,40 +166,26 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
     [self endScroll];
-    
 }
 
 -(void)endScroll{
-    
     self.collectionView.scrollEnabled = YES;
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:CGPointMake(self.collectionView.contentOffset.x+self.layout.inset.left+2, 0)];
- 
     [self.sectionIndexPathArray setObject:indexPath atIndexedSubscript:indexPath.section];
-    
-    
+    NSInteger itemCount = [self.collectionView numberOfItemsInSection:indexPath.section];
+    NSInteger pageCount = (itemCount-1)/(self.layout.rowCount*self.layout.columnCount)+1;
+    self.pageControl.numberOfPages = pageCount;
     if (indexPath.section != self.sourceIndexPath.section) {
-        
-        NSInteger itemCount = [self.collectionView numberOfItemsInSection:indexPath.section];
-        
-        NSInteger pageCount = (itemCount-1)/(self.layout.rowCount*self.layout.columnCount)+1;
-        self.pageControl.numberOfPages = pageCount;
-        
         [self.titleView contetnView:nil scrollProgress:1 sourceIndex:self.sourceIndexPath.section targetIndex:indexPath.section];
-        
         self.sourceIndexPath = indexPath;
-
     }
-
     self.pageControl.currentPage = indexPath.item/(self.layout.rowCount*self.layout.columnCount);
-
 }
 
 
 //代理方法
 -(void)titleView:(YBTitleView *)titleView didSelectedIndex:(NSInteger)index{
-
     [self.collectionView scrollToItemAtIndexPath:self.sectionIndexPathArray[index] atScrollPosition:(UICollectionViewScrollPositionLeft) animated:NO];
-    
 }
 
 

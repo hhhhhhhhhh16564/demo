@@ -79,12 +79,8 @@
 }
 
 
-
 -(void)contetnView:(YBContentView *)contentView scrollProgress:(CGFloat)progress sourceIndex:(NSInteger)sourceIndex targetIndex:(NSInteger)targetIndex{
-    
-    
     [self.titleView contetnView:contentView scrollProgress:progress sourceIndex:sourceIndex targetIndex:targetIndex];
-    
 }
 
 
