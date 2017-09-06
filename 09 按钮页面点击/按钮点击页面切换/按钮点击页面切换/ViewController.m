@@ -50,6 +50,8 @@
     self.label.backgroundColor = [UIColor grayColor];
     
     
+
+    
 }
 
 -(void)setDataSource{
@@ -146,7 +148,6 @@ __weak typeof(self) weakSelf = self;
     
     
    }];
-    
     
     
 }

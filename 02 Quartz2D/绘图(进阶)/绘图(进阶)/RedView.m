@@ -222,12 +222,35 @@
 -(void)text6{
     
     
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //直接在某个范围内渲染(边框）
+    CGContextStrokeRect(ctx, CGRectMake(50, 50, 100, 100));
     
+    // 第二次渲染
+    
+    //设置渲染边框颜色
+    CGContextSetRGBStrokeColor(ctx, 1, 1, 1, 1);
+    //    [[UIColor blueColor] setStroke];  上面那句话等同于这一句
+    CGContextSetLineWidth(ctx, 5);
+    CGContextAddRect(ctx, CGRectMake(30, 30, 100, 100));
+    CGContextStrokePath(ctx);
 }
 
 
 -(void)text7{
     
+    
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
+    
+    [[UIColor redColor] setFill];
+    
+    CGContextFillRect(ctx, CGRectMake(50, 50, 200, 200));
+    
+    
+    
+    [[UIColor clearColor] setFill];
+    CGContextFillRect(ctx, CGRectMake(80, 80, 140, 140));
     
     
 }
@@ -235,10 +258,28 @@
 
 -(void)text8{
     
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
     
+    UIBezierPath* path = [UIBezierPath bezierPathWithRect:CGRectMake(50, 50, 200, 200)];
+    
+    //    UIBezierPath* path1 = [UIBezierPath bezierPathWithArcCenter:CGPointMake(200, 150) radius:80 startAngle:0 endAngle:M_PI * 2 clockwise:1];
+    
+    UIBezierPath* path2 = [UIBezierPath bezierPathWithRect:CGRectMake(80, 80, 140, 140)];
+    
+    CGContextAddPath(ctx, path2.CGPath);
+    //    CGContextAddPath(ctx, path1.CGPath);
+    CGContextAddPath(ctx, path.CGPath);
+    
+    
+    
+    CGContextSetRGBFillColor(ctx, 0, 0, 0, 0.4);
+    
+    // 说明: 被覆盖过奇数次的点填充, 被覆盖过偶数次的点不填充
+    
+    // 奇填偶不填  填充样式是  kCGPathEOFill
+    CGContextDrawPath(ctx, kCGPathEOFill);
     
 }
-
 
 -(void)text9{
     

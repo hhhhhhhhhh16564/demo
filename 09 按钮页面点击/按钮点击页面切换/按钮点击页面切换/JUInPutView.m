@@ -145,27 +145,21 @@
         NSMutableAttributedString *sourceString = [[NSMutableAttributedString alloc]initWithAttributedString:self.textView.attributedText];
         
         [sourceString replaceCharactersInRange:self.textView.selectedRange withAttributedString:attributeStr];
-        
-        
-        
         self.attributeText = sourceString;
-        
         NSUInteger location = self.textView.selectedRange.location;
         NSUInteger length = self.textView.selectedRange.length;
         self.textView.attributedText = sourceString;
         self.textView.selectedRange = NSMakeRange(location+1, length);
- 
     }
-    
     [self setNeedsLayout];
 }
 
 
-
-
-
-
-
+-(void)hhhhhhhhh{
+    
+    
+    
+}
 
 
 

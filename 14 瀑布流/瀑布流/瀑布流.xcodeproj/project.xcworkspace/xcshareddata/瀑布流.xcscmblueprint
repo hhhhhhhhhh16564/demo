@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6E7AB6B48AD8134CB5370EB274CBFD71B754C0C2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6E7AB6B48AD8134CB5370EB274CBFD71B754C0C2" : 9223372036854775807,
+    "06739CC69D04584C5C685DFEC1155F1FFF71D296" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "67EA2558-60DA-493B-805F-96C0A86257F4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6E7AB6B48AD8134CB5370EB274CBFD71B754C0C2" : "14%20%E7%80%91%E5%B8%83%E6%B5%81\/",
+    "06739CC69D04584C5C685DFEC1155F1FFF71D296" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "瀑布流",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "瀑布流\/瀑布流.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:hhhhhhhhhh16564\/demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "06739CC69D04584C5C685DFEC1155F1FFF71D296"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:hhhhhhhhhh16564\/waterFlayout.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E7AB6B48AD8134CB5370EB274CBFD71B754C0C2"
+    }
+  ]
+}
