@@ -5,6 +5,7 @@
 //  Created by yanbo on 17/9/5.
 //  Copyright © 2017年 zhl. All rights reserved.
 //
+#import "StaticLibrary.h"
 
 #import "ViewController.h"
 #import <CoreImage/CoreImage.h>
@@ -73,7 +74,7 @@
 
 - (IBAction)a4:(id)sender {
     
- 
+    [StaticLibrary hhhh];
     
 }
 

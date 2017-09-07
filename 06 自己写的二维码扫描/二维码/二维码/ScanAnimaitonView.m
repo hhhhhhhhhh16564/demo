@@ -7,7 +7,6 @@
 //
 
 #import "ScanAnimaitonView.h"
-
 @interface ScanAnimaitonView ()
 
 {

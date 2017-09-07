@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>11.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>StaticLibrary.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>二维码.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +23,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>5E7008E61F5E422C00B34AEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E7961C31F5FDACC00EA9B4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5EB5997E1F5FD6D300A98BE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
