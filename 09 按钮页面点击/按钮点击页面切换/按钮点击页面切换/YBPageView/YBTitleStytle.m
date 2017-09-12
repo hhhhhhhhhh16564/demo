@@ -59,7 +59,7 @@
     self.marginSpace = 10;
     self.titleHeight = 44;
     self.font = [UIFont systemFontOfSize:15];
-    self.showBottonLine = NO;
+    self.showBottonLine = YES;
     self.bottomLineHeight = 5;
     self.bottomLineColor = [UIColor grayColor];
     

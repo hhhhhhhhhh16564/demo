@@ -36,6 +36,11 @@
 // 是否显示底部的条
 @property (nonatomic,assign) BOOL showBottonLine;
 
+//底部的条是否填充整个Label宽度 默认为NO
+@property (nonatomic,assign) BOOL bottomLineFillLableWidth;
+
+
+
 //底部条的高度
 @property (nonatomic,assign) CGFloat bottomLineHeight;
 

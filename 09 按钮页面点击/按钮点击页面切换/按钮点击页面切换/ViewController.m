@@ -38,18 +38,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self text2];
-    [self setDataSource];
-    
-    self.label = [[UILabel alloc]init];
-    self.label.numberOfLines = 0;
-    [self.view addSubview:self.label];
-    self.label.font = [UIFont systemFontOfSize:18];
-    
-    self.label.frame = CGRectMake(20, 300, 300, 250);
-    self.label.backgroundColor = [UIColor grayColor];
-    
-    
+    [self text1];
+//    [self setDataSource];
+//    
+//    self.label = [[UILabel alloc]init];
+//    self.label.numberOfLines = 0;
+//    [self.view addSubview:self.label];
+//    self.label.font = [UIFont systemFontOfSize:18];
+//    
+//    self.label.frame = CGRectMake(20, 300, 300, 250);
+//    self.label.backgroundColor = [UIColor grayColor];
+//    
+//    
 
     
 }
@@ -90,9 +90,9 @@
 -(void)text1{
     
     YBTitleStytle  *style = [[YBTitleStytle alloc]init];
-    style.isScrollEndble = YES;
-    NSArray *titleArray = @[@"语文", @"数学个地方官的双方各", @"化学生物", @"鹦鹉十多个电饭锅电饭锅", @"孙悟空发送分散", @"语文", @"数学", @"化学生物", @"鹦鹉", @"孙悟发顺丰萨达是否空"];
-    //    titleArray = @[@"语文", @"数学", @"英语"];
+    style.isScrollEndble = NO;
+    NSArray *titleArray = @[@"语文g", @"数学个地方官的双方各", @"化学生物", @"鹦鹉十多个电饭锅电饭锅", @"孙悟空发送分散", @"语文", @"数学", @"化学生物", @"鹦鹉", @"孙悟发顺丰萨达是否空"];
+        titleArray = @[@"语文好好", @"数学互换", @"英语牛逼"];
     NSMutableArray *childVcArray = [NSMutableArray array];
     
     for (int i = 0; i < titleArray.count; i++) {

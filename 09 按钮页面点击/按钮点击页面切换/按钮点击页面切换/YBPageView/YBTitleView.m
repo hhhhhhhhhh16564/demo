@@ -22,6 +22,8 @@
 //这次选中的Index
 @property (nonatomic,assign) NSUInteger newIndex;
 @property(nonatomic, strong) UIView *bottomLineView;
+//bottomLine的宽度
+@property(nonatomic, strong) NSMutableArray *bottomLineWidthArray;
 
 
 @end
@@ -102,6 +104,8 @@
     
     NSUInteger count = self.titleArray.count;
 
+    self.bottomLineWidthArray = [NSMutableArray array];
+    
     for (int i = 0; i < count; i++) {
         UILabel *lable = self.lableArray[i];
         CGFloat x = 0;
@@ -109,12 +113,15 @@
         CGFloat w = 0;
         CGFloat h = self.titleStyle.titleHeight;
         //可以滚动
+        NSString *title = self.titleArray[i];
+        w = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: self.titleStyle.font} context:nil].size.width;
+        
+        [self.bottomLineWidthArray addObject:@(w)];
         if (self.titleStyle.isScrollEndble) {
             
-            NSString *title = self.titleArray[i];
-            w = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: self.titleStyle.font} context:nil].size.width;
 
-            
+
+
             if (i == 0) {
                 x = self.titleStyle.marginSpace * 0.5;
             }else{
@@ -189,6 +196,22 @@
         }
         
         self.bottomLineView.frame = CGRectMake(newLabel.frame.origin.x, self.frame.size.height-self.titleStyle.bottomLineHeight, newLabel.frame.size.width, self.titleStyle.bottomLineHeight);
+        
+        
+        //自适应内容高度
+        if (!self.titleStyle.isScrollEndble && !self.titleStyle.bottomLineFillLableWidth && self.titleStyle.showBottonLine) {
+       
+            NSLog(@"%@", self.bottomLineWidthArray);
+            
+            CGFloat w = [self.bottomLineWidthArray[self.newIndex] floatValue];
+            
+            CGFloat x = newLabel.frame.origin.x + (newLabel.frame.size.width-w)*0.5;
+            
+            self.bottomLineView.frame = CGRectMake(x, self.frame.size.height-self.titleStyle.bottomLineHeight, w, self.titleStyle.bottomLineHeight);
+
+            
+        }
+        
 
     }];
     
@@ -254,18 +277,29 @@
             
         
         }
+    
             
         CGFloat y = self.frame.size.height-self.titleStyle.bottomLineHeight;
         CGFloat H = self.titleStyle.bottomLineHeight;
         CGFloat w = self.frame.size.width/self.titleArray.count;
         CGFloat x = oldLabel.frame.origin.x + (newLabel.frame.origin.x-oldLabel.frame.origin.x)*progress;
 
-        if (self.titleStyle.isScrollEndble) {
-            
-            w = oldLabel.frame.size.width + (newLabel.frame.size.width-oldLabel.frame.size.width)*progress;
-        }
+    if (self.titleStyle.isScrollEndble) {
         
-        self.bottomLineView.frame = CGRectMake(x, y, w, H);
+        w = oldLabel.frame.size.width + (newLabel.frame.size.width-oldLabel.frame.size.width)*progress;
+    }
+    
+    if (!self.titleStyle.isScrollEndble && !self.titleStyle.bottomLineFillLableWidth) {
+        
+        CGFloat old_W = [self.bottomLineWidthArray[self.oldIndex] floatValue];
+        CGFloat new_W = [self.bottomLineWidthArray[self.newIndex] floatValue];
+        CGFloat old_X = oldLabel.frame.origin.x + (oldLabel.frame.size.width-old_W)*0.5;
+        CGFloat new_X = newLabel.frame.origin.x + (newLabel.frame.size.width-new_W)*0.5;
+        x = old_X + (new_X-old_X)*progress;
+        w = old_W + (new_W-old_W)*progress; 
+    }
+    
+    self.bottomLineView.frame = CGRectMake(x, y, w, H);
 
     
     
