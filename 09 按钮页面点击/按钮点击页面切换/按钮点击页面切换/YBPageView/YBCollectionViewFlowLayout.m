@@ -185,7 +185,6 @@
     UICollectionViewLayoutAttributes * layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     layoutAttributes.frame = CGRectMake(x, y, w, h);
     
-    
 //    NSLog(@"%@", NSStringFromCGRect(layoutAttributes.frame));
     
     return layoutAttributes;

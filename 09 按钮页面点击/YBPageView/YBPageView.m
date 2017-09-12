@@ -86,18 +86,11 @@
 
 
 
--(void)layoutSubviews{
-    
-    [super layoutSubviews];
-    
-    CGRect titleFrame = CGRectMake(0, 0, self.frame.size.width, self.titleStyle.titleHeight);
-    self.titleView.frame = titleFrame;
-    
-    CGRect contentFrame = CGRectMake(0, CGRectGetMaxY(titleFrame), self.frame.size.width, self.frame.size.height-self.titleStyle.titleHeight);
-    self.contentView.frame = contentFrame;
-    
-    
-}
+
+
+
+
+
 
 
 

@@ -8,44 +8,6 @@
 
 #import "YBContentView.h"
 
-@interface YBContentCell: UICollectionViewCell
-
-@property(nonatomic, strong) UIView *childView;
-
-@end
-
-
-@implementation YBContentCell
-
--(instancetype)initWithFrame:(CGRect)frame{
-    
-    self = [super initWithFrame:frame];
-    
-    
-    return self;
-    
-}
-
--(void)setChildView:(UIView *)childView{
-    
-    [_childView removeFromSuperview];
-    _childView = childView;
-
-    [self.contentView addSubview:_childView];
-    
-    
-}
-
-
--(void)layoutSubviews{
-    
-    self.childView.frame = self.bounds;
-    
-}
-
-@end
-
-
 @interface YBContentView ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @property(nonatomic, strong)NSArray<UIViewController *> *childVcArray;
@@ -77,6 +39,7 @@
 
 -(void)setupUI{
     
+    
     [self addchildsVC];
     [self setupCollectionView];
     
@@ -97,14 +60,14 @@
     flowLayout.minimumLineSpacing = 0;
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//    flowLayout.itemSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height);
+    flowLayout.itemSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height);
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:flowLayout];
     collectionView.bounces = NO;
     collectionView.delegate = self;
     collectionView.dataSource = self;
     collectionView.pagingEnabled = YES;
     collectionView.showsHorizontalScrollIndicator = NO;
-    [collectionView registerClass:[YBContentCell class] forCellWithReuseIdentifier:@"jjj"];
+    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"jjj"];
     [self addSubview:collectionView];
     self.collectionView = collectionView;
 }
@@ -114,10 +77,11 @@
 
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    YBContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"jjj" forIndexPath:indexPath];
-
-    cell.childView = [self.childVcArray[indexPath.row] view];
-
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"jjj" forIndexPath:indexPath];
+    [[cell.contentView.subviews firstObject] removeFromSuperview];
+    UIView *subView = self.childVcArray[indexPath.row].view;
+    subView.backgroundColor = RandomColor;
+    [cell addSubview:subView];
     return cell;
 }
 
@@ -127,10 +91,7 @@
     return self.childVcArray.count;
 }
 
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return self.bounds.size;
 
-}
 
 #pragma parmk YBTitleClickView 代理方法
 -(void)titleView:(YBTitleClickView *)titleView didSelectedIndex:(NSInteger)index{
@@ -219,18 +180,8 @@
     
     self.isForbiddenScroll = YES;
     self.collectionView.scrollEnabled = YES;
-//    NSLog(@"结束拖拽");
+    NSLog(@"结束拖拽");
 
-}
-
-
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
-    
-    self.collectionView.frame = self.bounds;
-    [self.collectionView reloadData];
-    
 }
 
 

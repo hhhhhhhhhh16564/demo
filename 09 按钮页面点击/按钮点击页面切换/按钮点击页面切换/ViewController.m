@@ -22,6 +22,8 @@
 
 @property(nonatomic, strong) UILabel *label;
 
+@property(nonatomic, strong) YBPageView *pageView;
+
 
 
 @end
@@ -101,14 +103,32 @@
         [childVcArray addObject:Vc];
     }
     
-    CGRect rect = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20);
+    CGRect rect = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 150);
     
     YBPageView *pageView = [[YBPageView alloc]initWithFrame:rect stytle:style titles:titleArray childVcs:childVcArray parentVc:self];
     
     [self.view addSubview:pageView];
   
-
+    self.pageView = pageView;
+    
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    
+      CGRect rect = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 400);
+    
+    self.pageView.frame = rect;
+    
+//    [self.view setNeedsLayout];
+    
+    
+    
+}
+
+
+
+
 -(void)text2{
     
     YBTitleStytle *style = [[YBTitleStytle alloc]init];
