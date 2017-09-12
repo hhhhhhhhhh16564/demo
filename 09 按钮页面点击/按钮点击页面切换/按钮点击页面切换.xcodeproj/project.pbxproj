@@ -17,10 +17,10 @@
 		5E0C8F561F1751D2006E2D38 /* ________UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C8F551F1751D2006E2D38 /* ________UITests.m */; };
 		5E23401F1F175302007831E9 /* YBPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23401E1F175302007831E9 /* YBPageView.m */; };
 		5E2340221F175314007831E9 /* YBContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2340211F175314007831E9 /* YBContentView.m */; };
-		5E2340251F175327007831E9 /* YBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2340241F175327007831E9 /* YBTitleView.m */; };
 		5E2340281F175581007831E9 /* YBTitleStytle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2340271F175581007831E9 /* YBTitleStytle.m */; };
 		5E7D0F4D1F4AE232000C34B9 /* YBPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D0F4C1F4AE232000C34B9 /* YBPageCollectionView.m */; };
 		5E87CEE71F4BE064007F0A17 /* YBCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E87CEE61F4BE064007F0A17 /* YBCollectionViewFlowLayout.m */; };
+		5E897F881F67DEB10034418D /* YBTitleClickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E897F871F67DEB10034418D /* YBTitleClickView.m */; };
 		5E9274981F4D616600573398 /* ISEmojiList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E9274971F4D616600573398 /* ISEmojiList.plist */; };
 		5E92749A1F4D67B900573398 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9274991F4D67B900573398 /* Foundation+Log.m */; };
 		5E92749E1F4D7AFF00573398 /* EmotionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E92749D1F4D7AFF00573398 /* EmotionCollectionViewCell.m */; };
@@ -173,14 +173,14 @@
 		5E23401E1F175302007831E9 /* YBPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPageView.m; sourceTree = "<group>"; };
 		5E2340201F175314007831E9 /* YBContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBContentView.h; sourceTree = "<group>"; };
 		5E2340211F175314007831E9 /* YBContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBContentView.m; sourceTree = "<group>"; };
-		5E2340231F175327007831E9 /* YBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTitleView.h; sourceTree = "<group>"; };
-		5E2340241F175327007831E9 /* YBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBTitleView.m; sourceTree = "<group>"; };
 		5E2340261F175581007831E9 /* YBTitleStytle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTitleStytle.h; sourceTree = "<group>"; };
 		5E2340271F175581007831E9 /* YBTitleStytle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBTitleStytle.m; sourceTree = "<group>"; };
 		5E7D0F4B1F4AE232000C34B9 /* YBPageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPageCollectionView.h; sourceTree = "<group>"; };
 		5E7D0F4C1F4AE232000C34B9 /* YBPageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPageCollectionView.m; sourceTree = "<group>"; };
 		5E87CEE51F4BE064007F0A17 /* YBCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		5E87CEE61F4BE064007F0A17 /* YBCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		5E897F861F67DEB10034418D /* YBTitleClickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTitleClickView.h; sourceTree = "<group>"; };
+		5E897F871F67DEB10034418D /* YBTitleClickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBTitleClickView.m; sourceTree = "<group>"; };
 		5E9274971F4D616600573398 /* ISEmojiList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ISEmojiList.plist; sourceTree = "<group>"; };
 		5E9274991F4D67B900573398 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		5E92749C1F4D7AFF00573398 /* EmotionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionCollectionViewCell.h; sourceTree = "<group>"; };
@@ -402,8 +402,8 @@
 				5E23401E1F175302007831E9 /* YBPageView.m */,
 				5E2340201F175314007831E9 /* YBContentView.h */,
 				5E2340211F175314007831E9 /* YBContentView.m */,
-				5E2340231F175327007831E9 /* YBTitleView.h */,
-				5E2340241F175327007831E9 /* YBTitleView.m */,
+				5E897F861F67DEB10034418D /* YBTitleClickView.h */,
+				5E897F871F67DEB10034418D /* YBTitleClickView.m */,
 				5E2340261F175581007831E9 /* YBTitleStytle.h */,
 				5E2340271F175581007831E9 /* YBTitleStytle.m */,
 				5E7D0F4B1F4AE232000C34B9 /* YBPageCollectionView.h */,
@@ -770,6 +770,7 @@
 				5E92749E1F4D7AFF00573398 /* EmotionCollectionViewCell.m in Sources */,
 				5E7D0F4D1F4AE232000C34B9 /* YBPageCollectionView.m in Sources */,
 				5E92749A1F4D67B900573398 /* Foundation+Log.m in Sources */,
+				5E897F881F67DEB10034418D /* YBTitleClickView.m in Sources */,
 				5E2340221F175314007831E9 /* YBContentView.m in Sources */,
 				5E2340281F175581007831E9 /* YBTitleStytle.m in Sources */,
 				5E87CEE71F4BE064007F0A17 /* YBCollectionViewFlowLayout.m in Sources */,
@@ -778,7 +779,6 @@
 				5E0C8F351F1751D2006E2D38 /* AppDelegate.m in Sources */,
 				5EBA6F7B1F4E6A9C00523B50 /* JUInPutView.m in Sources */,
 				5E23401F1F175302007831E9 /* YBPageView.m in Sources */,
-				5E2340251F175327007831E9 /* YBTitleView.m in Sources */,
 				5E0C8F321F1751D2006E2D38 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

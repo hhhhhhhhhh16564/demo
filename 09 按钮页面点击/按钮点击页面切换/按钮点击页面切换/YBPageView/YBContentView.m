@@ -93,8 +93,8 @@
 
 
 
-#pragma parmk YBtitleView 代理方法
--(void)titleView:(YBTitleView *)titleView didSelectedIndex:(NSInteger)index{
+#pragma parmk YBTitleClickView 代理方法
+-(void)titleView:(YBTitleClickView *)titleView didSelectedIndex:(NSInteger)index{
     self.isForbiddenScroll = YES;
 
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];

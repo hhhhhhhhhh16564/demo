@@ -7,8 +7,8 @@
 //
 
 #import "YBPageCollectionView.h"
-#import "YBTitleView.h"
-@interface YBPageCollectionView()<UICollectionViewDelegate, UICollectionViewDataSource, YBTitleViewDelegate>
+#import "YBTitleClickView.h"
+@interface YBPageCollectionView()<UICollectionViewDelegate, UICollectionViewDataSource, YBTitleClickViewDelegate>
 @property(nonatomic, strong) YBTitleStytle *style;
 @property(nonatomic, strong) NSArray *titles;
 @property(nonatomic, assign) BOOL  isTop;
@@ -17,7 +17,7 @@
 
 @property(nonatomic, strong) UICollectionView *collectionView;
 
-@property(nonatomic, strong) YBTitleView *titleView;
+@property(nonatomic, strong) YBTitleClickView *titleView;
 
 @property(nonatomic, strong) UIPageControl *pageControl;
 
@@ -82,7 +82,7 @@
     
     CGRect titleFrame = CGRectMake(0, titleY, self.bounds.size.width, self.style.titleHeight);
 
-    YBTitleView *titleView = [[YBTitleView alloc]initWithFrame:titleFrame style:self.style titles:self.titles];
+    YBTitleClickView *titleView = [[YBTitleClickView alloc]initWithFrame:titleFrame style:self.style titles:self.titles];
     titleView.delegate = self;
     [self addSubview:titleView];
     self.titleView = titleView;
@@ -184,7 +184,7 @@
 
 
 //代理方法
--(void)titleView:(YBTitleView *)titleView didSelectedIndex:(NSInteger)index{
+-(void)titleView:(YBTitleClickView *)titleView didSelectedIndex:(NSInteger)index{
     [self.collectionView scrollToItemAtIndexPath:self.sectionIndexPathArray[index] atScrollPosition:(UICollectionViewScrollPositionLeft) animated:NO];
 }
 

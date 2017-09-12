@@ -10,7 +10,7 @@
 
 #define RandomColor [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1]
 
-@class YBTitleView;
+@class YBTitleClickView;
 @class YBContentView;
 
 @protocol YBContentViewDelegate <NSObject>
@@ -23,7 +23,7 @@
 
 @property(nonatomic, weak) id<YBContentViewDelegate>  delegate;
 
--(void)titleView:(YBTitleView *)titleView didSelectedIndex:(NSInteger)index;
+-(void)titleView:(YBTitleClickView *)titleView didSelectedIndex:(NSInteger)index;
 -(instancetype)initWithFrame:(CGRect)frame
                     childVcs:(NSArray <UIViewController *> *)childVcArray
                     parentVc:(UIViewController *)parentVc;

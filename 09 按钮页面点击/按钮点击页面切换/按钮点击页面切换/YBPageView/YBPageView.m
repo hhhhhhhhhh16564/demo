@@ -4,15 +4,15 @@
 //
 //  Created by 周磊 on 17/7/13.
 //  Copyright © 2017年 zhl. All rights reserved.
-//
+//YBTitleClickView
 
 #import "YBPageView.h"
-#import "YBTitleView.h"
+#import "YBTitleClickView.h"
 #import "YBContentView.h"
 
 
 
-@interface YBPageView ()<YBTitleViewDelegate, YBContentViewDelegate>
+@interface YBPageView ()<YBTitleClickViewDelegate, YBContentViewDelegate>
 
 @property(nonatomic, strong) YBTitleStytle *titleStyle;
 @property(nonatomic, strong) NSArray *titleArray;
@@ -20,7 +20,7 @@
 @property(nonatomic, strong) UIViewController *parentVc;
 
 
-@property(nonatomic, strong) YBTitleView *titleView;
+@property(nonatomic, strong) YBTitleClickView *titleView;
 @property(nonatomic, strong) YBContentView *contentView;
 
 
@@ -54,7 +54,7 @@
     
     //titleView
     CGRect titleFrame = CGRectMake(0, 0, self.frame.size.width, self.titleStyle.titleHeight);
-    YBTitleView *titleView = [[YBTitleView alloc]initWithFrame:titleFrame style:self.titleStyle titles:self.titleArray];
+    YBTitleClickView *titleView = [[YBTitleClickView alloc]initWithFrame:titleFrame style:self.titleStyle titles:self.titleArray];
     [self addSubview:titleView];
     titleView.delegate = self;
     self.titleView = titleView;
@@ -72,7 +72,7 @@
 
 
 #pragma mark 代理方法
--(void)titleView:(YBTitleView *)titleView didSelectedIndex:(NSInteger)index{
+-(void)titleView:(YBTitleClickView *)titleView didSelectedIndex:(NSInteger)index{
     
     [self.contentView titleView:titleView didSelectedIndex:index];
     

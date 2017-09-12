@@ -1,26 +1,25 @@
 //
-//  YBTitleView.h
+//  YBTitleClickView.h
 //  按钮点击页面切换
 //
-//  Created by 周磊 on 17/7/13.
+//  Created by yanbo on 17/9/12.
 //  Copyright © 2017年 zhl. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
 #import "YBTitleStytle.h"
 
 #define RandomColor [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1]
 
-@class YBTitleView;
+@class YBTitleClickView;
 @class YBContentView;
-@protocol YBTitleViewDelegate <NSObject>
+@protocol YBTitleClickViewDelegate <NSObject>
 
--(void)titleView:(YBTitleView *)titleView didSelectedIndex:(NSInteger)index;
+-(void)titleView:(YBTitleClickView *)titleView didSelectedIndex:(NSInteger)index;
 
 @end
 
-@interface YBTitleView : UIView
-@property (nonatomic,weak) id<YBTitleViewDelegate> delegate;
+@interface YBTitleClickView : UIView
+@property (nonatomic,weak) id<YBTitleClickViewDelegate> delegate;
 -(instancetype)initWithFrame:(CGRect)frame
                        style:(YBTitleStytle *)titleStyle
                       titles:(NSArray *)titleArray;

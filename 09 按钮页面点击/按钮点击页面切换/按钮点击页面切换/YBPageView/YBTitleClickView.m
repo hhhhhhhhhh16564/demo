@@ -1,14 +1,14 @@
 //
-//  YBTitleView.m
+//  YBTitleClickView.m
 //  按钮点击页面切换
 //
 //  Created by 周磊 on 17/7/13.
 //  Copyright © 2017年 zhl. All rights reserved.
 //
 
-#import "YBTitleView.h"
+#import "YBTitleClickView.h"
 
-@interface YBTitleView()
+@interface YBTitleClickView()
 @property(nonatomic, strong) YBTitleStytle *titleStyle;
 @property(nonatomic, strong) NSArray *titleArray;
 
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation YBTitleView
+@implementation YBTitleClickView
 
 -(instancetype)initWithFrame:(CGRect)frame
                        style:(YBTitleStytle *)titleStyle
@@ -77,7 +77,7 @@
 
 
 -(void)setupTitles{
-
+    
     self.lableArray = [NSMutableArray array];
     
     for (NSString *title in self.titleArray) {
@@ -92,8 +92,8 @@
         [self.scrollView addSubview:label];
         [self.lableArray addObject:label];
         
-//        label.backgroundColor = RandomColor;
-
+        //        label.backgroundColor = RandomColor;
+        
     }
     
 }
@@ -103,7 +103,7 @@
 -(void)setupTitleFrame{
     
     NSUInteger count = self.titleArray.count;
-
+    
     self.bottomLineWidthArray = [NSMutableArray array];
     
     for (int i = 0; i < count; i++) {
@@ -119,9 +119,9 @@
         [self.bottomLineWidthArray addObject:@(w)];
         if (self.titleStyle.isScrollEndble) {
             
-
-
-
+            
+            
+            
             if (i == 0) {
                 x = self.titleStyle.marginSpace * 0.5;
             }else{
@@ -146,7 +146,7 @@
         self.scrollView.contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
     }
     
-     
+    
     
 }
 
@@ -156,12 +156,12 @@
         bottomLineView.backgroundColor = self.titleStyle.bottomLineColor;
         [self.scrollView addSubview:bottomLineView];
         self.bottomLineView = bottomLineView;
-
+        
     }
+    
+}
 
-  }
-    
-    
+
 
 
 #pragma mark 点击事件
@@ -186,7 +186,7 @@
         duration = 0.3;
     }
     
-
+    
     [UIView animateWithDuration:duration animations:^{
         if (self.titleStyle.isScrollEndble) {
             //设置自动滚动
@@ -200,7 +200,7 @@
         
         //自适应内容高度
         if (!self.titleStyle.isScrollEndble && !self.titleStyle.bottomLineFillLableWidth && self.titleStyle.showBottonLine) {
-       
+            
             NSLog(@"%@", self.bottomLineWidthArray);
             
             CGFloat w = [self.bottomLineWidthArray[self.newIndex] floatValue];
@@ -208,14 +208,14 @@
             CGFloat x = newLabel.frame.origin.x + (newLabel.frame.size.width-w)*0.5;
             
             self.bottomLineView.frame = CGRectMake(x, self.frame.size.height-self.titleStyle.bottomLineHeight, w, self.titleStyle.bottomLineHeight);
-
+            
             
         }
         
-
+        
     }];
     
-
+    
     // 3. 代理方法
     if ([self.delegate respondsToSelector:@selector(titleView:didSelectedIndex:)]) {
         [self.delegate titleView:self didSelectedIndex:self.newIndex];
@@ -242,7 +242,7 @@
     
     NSMutableArray *nomalColorArray = [self changeUIColorToRGB:self.titleStyle.titleNomalColor];
     NSMutableArray *selectColorArray = [self changeUIColorToRGB:self.titleStyle.titleSelectColor];
-
+    
     //红
     NSInteger differenceRed = [selectColorArray[0] integerValue] - [nomalColorArray[0] integerValue];
     //绿
@@ -254,36 +254,36 @@
     
     
     newLabel.textColor = [UIColor colorWithRed:([nomalColorArray[0] integerValue] + differenceRed * progress)/255.0 green:([nomalColorArray[1] integerValue] + differenceGreen * progress)/255.0 blue:([nomalColorArray[2] integerValue] + differenceBlue * progress)/255.0 alpha:1];
-
+    
     self.oldIndex = targetIndex;
     
     // 2. 调整位置
-        if (self.titleStyle.isScrollEndble) {
-            //设置自动滚动
-            CGFloat sourceOffsetX = oldLabel.center.x - self.bounds.size.width*0.5;
-            CGFloat targetOffsetX = newLabel.center.x - self.bounds.size.width*0.5;
-            targetOffsetX = sourceOffsetX + (targetOffsetX-sourceOffsetX)*progress;
-          
-            if (targetOffsetX <= 0) {
-                targetOffsetX = 0;
-            }
-            CGFloat maxOffsetx = self.scrollView.contentSize.width - self.scrollView.bounds.size.width;
-            
-            if (targetOffsetX >= maxOffsetx) {
-                targetOffsetX = maxOffsetx;
-            }
-            
-            [self.scrollView setContentOffset:CGPointMake(targetOffsetX, 0) animated:NO];
-            
+    if (self.titleStyle.isScrollEndble) {
+        //设置自动滚动
+        CGFloat sourceOffsetX = oldLabel.center.x - self.bounds.size.width*0.5;
+        CGFloat targetOffsetX = newLabel.center.x - self.bounds.size.width*0.5;
+        targetOffsetX = sourceOffsetX + (targetOffsetX-sourceOffsetX)*progress;
         
+        if (targetOffsetX <= 0) {
+            targetOffsetX = 0;
         }
+        CGFloat maxOffsetx = self.scrollView.contentSize.width - self.scrollView.bounds.size.width;
+        
+        if (targetOffsetX >= maxOffsetx) {
+            targetOffsetX = maxOffsetx;
+        }
+        
+        [self.scrollView setContentOffset:CGPointMake(targetOffsetX, 0) animated:NO];
+        
+        
+    }
     
-            
-        CGFloat y = self.frame.size.height-self.titleStyle.bottomLineHeight;
-        CGFloat H = self.titleStyle.bottomLineHeight;
-        CGFloat w = self.frame.size.width/self.titleArray.count;
-        CGFloat x = oldLabel.frame.origin.x + (newLabel.frame.origin.x-oldLabel.frame.origin.x)*progress;
-
+    
+    CGFloat y = self.frame.size.height-self.titleStyle.bottomLineHeight;
+    CGFloat H = self.titleStyle.bottomLineHeight;
+    CGFloat w = self.frame.size.width/self.titleArray.count;
+    CGFloat x = oldLabel.frame.origin.x + (newLabel.frame.origin.x-oldLabel.frame.origin.x)*progress;
+    
     if (self.titleStyle.isScrollEndble) {
         
         w = oldLabel.frame.size.width + (newLabel.frame.size.width-oldLabel.frame.size.width)*progress;
@@ -296,11 +296,11 @@
         CGFloat old_X = oldLabel.frame.origin.x + (oldLabel.frame.size.width-old_W)*0.5;
         CGFloat new_X = newLabel.frame.origin.x + (newLabel.frame.size.width-new_W)*0.5;
         x = old_X + (new_X-old_X)*progress;
-        w = old_W + (new_W-old_W)*progress; 
+        w = old_W + (new_W-old_W)*progress;
     }
     
     self.bottomLineView.frame = CGRectMake(x, y, w, H);
-
+    
     
     
 }
@@ -314,14 +314,14 @@
     NSString *RGBValue = [NSString stringWithFormat:@"%@",color];
     
     //  UIExtendedSRGBColorSpace 0.972549 0.392157 0.0901961 1
-
+    
     //将RGB值描述分隔成字符串
     NSArray *RGBArr = [RGBValue componentsSeparatedByString:@" "];
-
+    
     
     
     NSAssert([RGBArr count] == 5, @"所传的颜色必须是RGB颜色");
-
+    
     //获取红色值
     int r = [[RGBArr objectAtIndex:1] intValue] * 255;
     RGBStr = [NSString stringWithFormat:@"%d",r];
