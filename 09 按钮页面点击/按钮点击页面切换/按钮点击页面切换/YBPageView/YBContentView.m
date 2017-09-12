@@ -38,8 +38,8 @@
 
 
 -(void)layoutSubviews{
-    
     self.childView.frame = self.bounds;
+    self.childView.backgroundColor = RandomColor;
     
 }
 

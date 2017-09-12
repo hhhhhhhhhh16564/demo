@@ -115,8 +115,9 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+    CGFloat height = self.pageView.frame.size.height - 30;
     
-      CGRect rect = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 400);
+      CGRect rect = CGRectMake(0, 50, self.view.frame.size.width, height);
     
     self.pageView.frame = rect;
     
