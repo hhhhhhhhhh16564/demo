@@ -21,6 +21,7 @@
 		31F69821224631AB001C9B1E /* JStoOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 31F6981B224631AB001C9B1E /* JStoOC.html */; };
 		31F69822224631AB001C9B1E /* webRefreshButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F6981C224631AB001C9B1E /* webRefreshButton@2x.png */; };
 		31F69823224631AB001C9B1E /* webRefreshButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F6981D224631AB001C9B1E /* webRefreshButton@3x.png */; };
+		7EC265D122A4FFD900DDD89C /* aaaa.html in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265D022A4FFD900DDD89C /* aaaa.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		31F6981B224631AB001C9B1E /* JStoOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JStoOC.html; sourceTree = "<group>"; };
 		31F6981C224631AB001C9B1E /* webRefreshButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webRefreshButton@2x.png"; sourceTree = "<group>"; };
 		31F6981D224631AB001C9B1E /* webRefreshButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webRefreshButton@3x.png"; sourceTree = "<group>"; };
+		7EC265D022A4FFD900DDD89C /* aaaa.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = aaaa.html; path = Resource/aaaa.html; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				310D1BF52074674600FF3CBE /* Main.storyboard */,
 				310D1BF82074674600FF3CBE /* Assets.xcassets */,
 				310D1BFA2074674600FF3CBE /* LaunchScreen.storyboard */,
+				7EC265D022A4FFD900DDD89C /* aaaa.html */,
 				310D1BFD2074674600FF3CBE /* Info.plist */,
 				310D1BFE2074674600FF3CBE /* main.m */,
 			);
@@ -278,6 +281,7 @@
 				31F69823224631AB001C9B1E /* webRefreshButton@3x.png in Resources */,
 				31F6981F224631AB001C9B1E /* backbutton@3x.png in Resources */,
 				31F69821224631AB001C9B1E /* JStoOC.html in Resources */,
+				7EC265D122A4FFD900DDD89C /* aaaa.html in Resources */,
 				310D1BF92074674600FF3CBE /* Assets.xcassets in Resources */,
 				310D1BF72074674600FF3CBE /* Main.storyboard in Resources */,
 				31F69822224631AB001C9B1E /* webRefreshButton@2x.png in Resources */,

@@ -40,12 +40,12 @@
 //    
 //        self.chidlrenView = chidlrenView;
 
-//        RedView *chidlrenView = [[RedView alloc]init];
-//        chidlrenView.frame = CGRectMake(50, 150, 300, 300);
-//        chidlrenView.backgroundColor = [UIColor yellowColor];
-//        [self.view addSubview:chidlrenView];
-//    
-//        self.chidlrenView = chidlrenView;
+        RedView *chidlrenView = [[RedView alloc]init];
+        chidlrenView.frame = CGRectMake(50, 150, 300, 300);
+        chidlrenView.backgroundColor = [UIColor yellowColor];
+        [self.view addSubview:chidlrenView];
+    
+        self.chidlrenView = chidlrenView;
     
     
 
@@ -70,21 +70,21 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     
-  UIImage *iamge =  [self tex2];
-    
-    UIView *view = [[UIView alloc]init];
-    view.frame = CGRectMake(0, 170, 375, 500);
-    [self.view addSubview:view];
-    view.backgroundColor = [UIColor greenColor];
-    
-    
-    
-    
-    
-    
-     view.backgroundColor = [UIColor colorWithPatternImage:iamge];
-    return;
-    
+//  UIImage *iamge =  [self tex2];
+//
+//    UIView *view = [[UIView alloc]init];
+//    view.frame = CGRectMake(0, 170, 375, 500);
+//    [self.view addSubview:view];
+//    view.backgroundColor = [UIColor greenColor];
+//
+//
+//
+//
+//
+//
+//     view.backgroundColor = [UIColor colorWithPatternImage:iamge];
+//    return;
+//
     
     
     
@@ -114,7 +114,7 @@
     
     NSData *data = UIImagePNGRepresentation(image);
     
-    [data writeToFile:@"/Users/julyonline/Desktop/study_YY.png" atomically:YES];
+    [data writeToFile:@"/Users/poyan/Desktop/11/13.png" atomically:YES];
     
     //关闭
     UIGraphicsEndImageContext();

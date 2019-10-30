@@ -15,7 +15,7 @@
 
 - (void)drawRect:(CGRect)rect {
 
-    [self text5];
+    [self text2];
     
 }
 
@@ -94,9 +94,9 @@
     
 
     UIGraphicsEndImageContext();
-    
+   
     NSData *data = UIImagePNGRepresentation(newImage);
-    [data writeToFile:@"/Users/julyonline/Desktop/未命名文件夹 5/3.png" atomically:YES];
+    [data writeToFile:@"/Users/poyan/Desktop/11/4.png" atomically:YES];
     
     
     //保存图片到相册
@@ -104,8 +104,8 @@
     // Adds a photo to the saved photos album.  The optional completionSelector should have the form:
     //  - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
     
-    
-    UIImageWriteToSavedPhotosAlbum(newImage, self, @selector(image: didFinishSavingWithError: contextInfo:), @"111") ;
+//
+//    UIImageWriteToSavedPhotosAlbum(newImage, self, @selector(image: didFinishSavingWithError: contextInfo:), @"111") ;
 
 }
 

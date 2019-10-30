@@ -212,11 +212,13 @@
 					};
 					5E20BE351F1373F600C17327 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D5NG9KG9U7;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5E20BE1C1F1373F600C17327;
 					};
 					5E20BE401F1373F600C17327 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D5NG9KG9U7;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5E20BE1C1F1373F600C17327;
 					};
@@ -227,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -347,6 +350,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D5NG9KG9U7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -394,6 +398,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D5NG9KG9U7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -415,11 +420,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Honghe Aixue Education & Technology Co., Ltd. (LMXG7U7E57)";
 				DEVELOPMENT_TEAM = AGR3TJ956L;
 				INFOPLIST_FILE = "视频采集/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "julyedu.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hht.bbteacher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -428,11 +434,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Honghe Aixue Education & Technology Co., Ltd. (LMXG7U7E57)";
 				DEVELOPMENT_TEAM = AGR3TJ956L;
 				INFOPLIST_FILE = "视频采集/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "julyedu.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hht.bbteacher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -502,6 +509,7 @@
 				5E20BE4C1F1373F600C17327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E20BE4D1F1373F600C17327 /* Build configuration list for PBXNativeTarget "视频采集Tests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +518,7 @@
 				5E20BE4F1F1373F600C17327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E20BE501F1373F600C17327 /* Build configuration list for PBXNativeTarget "视频采集UITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +527,7 @@
 				5E20BE521F1373F600C17327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
